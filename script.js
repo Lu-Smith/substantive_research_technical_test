@@ -1,3 +1,7 @@
+// API
+
+let data;
+
 const getAPI = async () => {
     const response = await fetch ('http://substantiveresearch.pythonanywhere.com/');
     if (response.status !== 200) {
@@ -8,5 +12,31 @@ const getAPI = async () => {
 }
 
 getAPI()
-.then(data => console.log(data))
+.then(data => {
+    console.log(data);
+
+        loadTableData(data);
+})
 .catch(err => console.log('rejected', err.message));
+
+//table
+
+
+    let sortDirection = false;    
+
+
+ 
+    
+    function loadTableData(data) {
+        const tableBody = document.getElementById('tableData');
+        let dataHtml = '';
+    
+        for (let interaction of data) {
+            dataHtml += `<tr><td>${interaction.date}</td><td>${interaction.name}</td><td>${interaction.sector_id}</td></tr>`;
+        }
+        console.log(dataHtml);
+        tableBody.innerHTML = dataHtml;
+    }
+    
+   
+
