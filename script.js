@@ -1,6 +1,7 @@
 // API
 
 let data;
+let globalData = [];
 
 const getAPI = async () => {
     const response = await fetch ('http://substantiveresearch.pythonanywhere.com/');
@@ -14,18 +15,15 @@ const getAPI = async () => {
 getAPI()
 .then(data => {
     console.log(data);
-
-        loadTableData(data);
+    globalData = data;
+    loadTableData(data);
 })
 .catch(err => console.log('rejected', err.message));
 
 //table
 
-
     let sortDirection = false;    
 
-
- 
     
     function loadTableData(data) {
         const tableBody = document.getElementById('tableData');
@@ -34,9 +32,20 @@ getAPI()
         for (let interaction of data) {
             dataHtml += `<tr><td>${interaction.date}</td><td>${interaction.name}</td><td>${interaction.sector_id}</td></tr>`;
         }
-        console.log(dataHtml);
         tableBody.innerHTML = dataHtml;
+
     }
+
+    
+    function sortColumn(columnName) {
+        const dataType = globalData[0][columnName];
+        console.log(dataType);
+        sortDirection = !sortDirection; 
+    }
+
+
+
+
     
    
 
