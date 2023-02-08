@@ -34,15 +34,32 @@ getAPI()
         }
         tableBody.innerHTML = dataHtml;
 
+ //show the percentages of interactions this client has for each sector.
+        let interactionCount = {};
+
+        for (let i = 0; i < globalData.length; i++) {
+            if (interactionCount[globalData[i].sector_id]) {
+                interactionCount[globalData[i].sector_id]++;
+            } else {
+                interactionCount[globalData[i].sector_id] = 1;
+            }
+          }
+          
+          for (let item in interactionCount) {
+            let percentage = (interactionCount[item] / globalData.length) * 100;
+            console.log(item + ": " + percentage + "%");
+          }
+
     }
 
-    //show the percentages of interactions this client has for each sector.
+// sort by sector_id
 
     function sortStringColumn(sort, columnName) {
         globalData = globalData.sort((p1,p2) => {
             return sort ? p1[columnName] - p2[columnName] : p2[columnName] - p1[columnName]
         });
     }
+
     
     function sortColumn(columnName) {
         const dataType = typeof globalData[0][columnName];
@@ -53,11 +70,14 @@ getAPI()
             case 'string':
                 sortStringColumn(sortDirection, columnName);
                 break;
+
         }
 
         loadTableData(globalData);
-
     }
+   
+
+
    
  
 
