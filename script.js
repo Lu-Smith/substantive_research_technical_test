@@ -30,7 +30,10 @@ getAPI()
         let dataHtml = '';
     
         for (let interaction of globalData) {
-            dataHtml += `<tr><td>${interaction.date}</td><td>${interaction.name}</td><td>${interaction.sector_id}</td></tr>`;
+   
+                dataHtml += `<tr><td>${interaction.date}</td><td>${interaction.name}</td><td>${interaction.sector_id}</td></tr>`;
+
+            
         }
         tableBody.innerHTML = dataHtml;
 
@@ -53,6 +56,7 @@ getAPI()
             dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage.toFixed(1)}%</td></tr>`;
         }
 
+        
         tableBodyPercentage.innerHTML = dataHtmlPercentage;
 
     }
