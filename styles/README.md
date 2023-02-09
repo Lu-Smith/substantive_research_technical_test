@@ -11,7 +11,7 @@ Luna Smith
 Plan
 1. Create basics files
 2. Retrieve data from the API 
-3. Parse the retrieved data into a suitable format for tabular representation
+3. Parse the retrieved data into a suitable format for a tabular representation
 4. Create an HTML table to display the parsed data
 5. Parse the retrieved data into a suitable format for graphical representation
 6. Use a charting library to create visual representations of the data (Chart.js)
@@ -19,7 +19,7 @@ Plan
 8. Style the project with SASS
 
 Future plans:
-1. Get faster but doing similar projects
+1. Get faster by doing similar projects
 2. Get better at testing the side ( perhaps using TDD)
-3. Use different library like React to achieve results faster.
+3. Use a different library like React to achieve results faster.
 4. Spend more time to bring this project to its full potential, with better graphics and visual effects.
