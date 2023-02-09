@@ -54,6 +54,8 @@ td, th {
 th {
     font-weight: bold;
     text-transform: uppercase;
+    background-color: $secondary-color;
+    color: $secondary-background;
 }
 
 tr:nth-child(even) {

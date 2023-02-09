@@ -50,6 +50,8 @@ td, th {
 th {
   font-weight: bold;
   text-transform: uppercase;
+  background-color: #313f36;
+  color: #dde0ab;
 }
 
 tr:nth-child(even) {
