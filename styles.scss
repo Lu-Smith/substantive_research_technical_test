@@ -1,11 +1,15 @@
 @import 'colors.scss';
 @import 'spacing.scss';
 @import 'borders.scss';
+@import 'fonts.scss';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $base-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
 }
 
 body {
@@ -16,11 +20,15 @@ body {
 
 h1 {
     color: $primary-color;
+    font-family: $large-font;
+    font-size: $large-font-size;
+    line-height: $large-line-height;
 }
 
 h2 {
     color: $secondary-color;
     margin: $base-margin;
+    font-style: italic;
 }
 
 table {
@@ -39,6 +47,8 @@ table {
 td, th {
     border: $base-border-thickness solid $primary-color;
     padding: $small-padding;
+    font-size: $small-font-size;
+    line-height: $small-line-height;
 }
 
 th {
