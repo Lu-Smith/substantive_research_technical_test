@@ -7,15 +7,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: $base-font;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
 }
 
 body {
     text-align: center;
     padding: $base-padding;
     background-color: $primary-background;
+    font-family: $base-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+
+    @media (max-width: 768px) {
+        font-size: $base-font-size-mobile;
+        padding: $small-padding;
+    }
 }
 
 h1 {
@@ -23,6 +28,10 @@ h1 {
     font-family: $large-font;
     font-size: $large-font-size;
     line-height: $large-line-height;
+
+    @media (max-width: 768px) {
+        font-size: $large-font-size-mobile;
+    }
 }
 
 h2 {
@@ -38,10 +47,18 @@ table {
 
 .tablePercentage {
     width: 60vw;
+
+    @media (max-width: 768px) {
+        width: 80vw;
+    }
 }
 
 .tableInteractions {
     width: 80vw;
+
+    @media (max-width: 768px) {
+        width: 90vw;
+    }
     
 }
 
@@ -50,6 +67,10 @@ td, th {
     padding: $small-padding;
     font-size: $small-font-size;
     line-height: $small-line-height;
+
+    @media (max-width: 768px) {
+        font-size: $small-font-size-mobile;
+    }
 }
 
 th {
@@ -97,6 +118,10 @@ tr:hover {
 .canvas-percentage-container {
     width: 40%;
     margin: $base-margin auto;
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
 }
 
 .canvas-line-container {
