@@ -49,15 +49,11 @@ getAPI()
           
         for (let j in interactionCount) {
             let percentage = (interactionCount[j] / globalData.length) * 100;
-            console.log(j + ": " + percentage + "%");
-            dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage}</td></tr>`;
+            console.log(j + ": " + percentage.toFixed(1) + "%");
+            dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage.toFixed(1)}%</td></tr>`;
         }
 
         tableBodyPercentage.innerHTML = dataHtmlPercentage;
-  
-    
-
-
 
     }
 
