@@ -71,9 +71,10 @@ tr:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: relative;
   transition: 200ms all ease-in-out;
   border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 5px;
 }
 .sector-id-button span {
   margin-left: 5px;
@@ -82,6 +83,8 @@ tr:hover {
 .sector-id-button:hover {
   background-color: #4c6c81;
   color: #feffdf;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .canvas-percentage-container {
@@ -95,14 +98,28 @@ tr:hover {
 }
 
 footer {
+  display: flex;
   margin-top: 2rem;
   padding: 2rem;
   background-color: #dde0ab;
   border-radius: 20px;
+  letter-spacing: 2px;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
 }
 
 footer a {
+  margin: 0 0 0 5px;
   color: #313f36;
   text-decoration: none;
   font-weight: bold;
+  transition: 200ms all ease-in-out;
+  position: relative;
+}
+
+footer a:hover {
+  color: #4c6c81;
+  border-bottom: 2px solid #4c6c81;
+  transform: translateY(-5px);
 }/*# sourceMappingURL=styles.css.map */

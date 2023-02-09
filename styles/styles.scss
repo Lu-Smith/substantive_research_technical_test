@@ -42,6 +42,7 @@ table {
 
 .tableInteractions {
     width: 80vw;
+    
 }
 
 td, th {
@@ -76,9 +77,10 @@ tr:hover {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: relative;
     transition: 200ms all ease-in-out;
     border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    margin: 5px;
 
     span {
         margin-left: 5px;
@@ -88,6 +90,8 @@ tr:hover {
 .sector-id-button:hover {
     background-color: $primary-color;
     color: $primary-background;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .canvas-percentage-container {
@@ -101,14 +105,30 @@ tr:hover {
 }
 
 footer {
+    display: flex;
     margin-top: $base-margin;
     padding: $base-padding;
     background-color: $secondary-background;
     border-radius: $base-border-radius;
+    letter-spacing: 2px;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    
 }
 
 footer a {
+    margin: 0 0 0 5px;
     color: $secondary-color;
     text-decoration: none;
     font-weight: bold;
+    transition: 200ms all ease-in-out;
+    position: relative;
+}
+
+footer a:hover {
+    
+    color: $primary-color;
+    border-bottom: $base-border-thickness solid $primary-color;
+    transform: translateY(-5px);
 }
