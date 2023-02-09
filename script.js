@@ -65,22 +65,30 @@ getAPI()
                     display: true,
                     position: 'top',
                     labels: {
-                        color: '#ff6f3c'
+                        color: '#ff6f3c',
+                        font: {
+                            size: 16
+                        }
                     }
                 }
             },
             scales: {
                 y: {
                     ticks: {
-                        // Include a dollar sign in the ticks
+                        // Include a Sector in the ticks
                         callback: function(value, index, ticks) {
                             return 'Sector ' + value;
                         }
+                    },
+                    grid: {
+                        tickColor: '#313f36',
+                        tickWidth: 4
                     }
                 },
                 x: {
                     grid: {
-                        lineWidth: 4
+                        tickColor: '#313f36',
+                        tickWidth: 4
                     }
                 },
             }
