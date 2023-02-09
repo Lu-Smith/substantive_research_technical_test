@@ -6,28 +6,35 @@
 
 body {
   text-align: center;
-  padding: 30px;
+  padding: 2rem;
   background-color: #feffdf;
 }
 
 h1 {
   color: #4c6c81;
-  margin-bottom: 30px;
 }
 
 h2 {
   color: #313f36;
+  margin: 2rem;
 }
 
 table {
   border-collapse: collapse;
-  width: 60vw;
   margin: 0 auto;
 }
 
+.tablePercentage {
+  width: 60vw;
+}
+
+.tableInteractions {
+  width: 80vw;
+}
+
 td, th {
-  border: 1px solid #4c6c81;
-  padding: 10px;
+  border: 2px solid #4c6c81;
+  padding: 1rem;
 }
 
 th {
@@ -46,19 +53,23 @@ tr:hover {
 
 .canvas-percentage-container {
   width: 40%;
-  margin: 50px auto;
+  margin: 2rem auto;
 }
 
 .canvas-line-container {
   width: 90%;
-  margin: 50px auto;
+  margin: 2rem auto;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 2rem;
+  padding: 2rem;
   background-color: #dde0ab;
+  border-radius: 20px;
 }
 
 footer a {
   color: #313f36;
+  text-decoration: none;
+  font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */

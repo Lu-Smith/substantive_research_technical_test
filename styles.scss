@@ -1,4 +1,6 @@
 @import 'colors.scss';
+@import 'spacing.scss';
+@import 'borders.scss';
 
 * {
     margin: 0;
@@ -8,28 +10,35 @@
 
 body {
     text-align: center;
-    padding: 30px;
+    padding: $base-padding;
     background-color: $primary-background;
 }
 
 h1 {
     color: $primary-color;
-    margin-bottom: 30px
 }
 
 h2 {
     color: $secondary-color;
+    margin: $base-margin;
 }
 
 table {
     border-collapse: collapse;
-    width: 60vw;
     margin: 0 auto;
 }
 
+.tablePercentage {
+    width: 60vw;
+}
+
+.tableInteractions {
+    width: 80vw;
+}
+
 td, th {
-    border: 1px solid $primary-color;
-    padding: 10px;
+    border: $base-border-thickness solid $primary-color;
+    padding: $small-padding;
 }
 
 th {
@@ -48,19 +57,23 @@ tr:hover {
 
 .canvas-percentage-container {
     width: 40%;
-    margin: 50px auto;
+    margin: $base-margin auto;
 }
 
 .canvas-line-container {
     width: 90%;
-    margin: 50px auto;
+    margin: $base-margin auto;
 }
 
 footer {
-    margin-top: 40px;
+    margin-top: $base-margin;
+    padding: $base-padding;
     background-color: $secondary-background;
+    border-radius: $base-border-radius;
 }
 
 footer a {
     color: $secondary-color;
+    text-decoration: none;
+    font-weight: bold;
 }
