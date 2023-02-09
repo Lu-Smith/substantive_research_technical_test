@@ -36,6 +36,8 @@ getAPI()
 
  //show the percentages of interactions this client has for each sector.
         let interactionCount = {};
+        const tableBodyPercentage = document.getElementById('tableDataPercentage');
+        let dataHtmlPercentage = '';
 
         for (let i = 0; i < globalData.length; i++) {
             if (interactionCount[globalData[i].sector_id]) {
@@ -45,10 +47,17 @@ getAPI()
             }
           }
           
-          for (let item in interactionCount) {
-            let percentage = (interactionCount[item] / globalData.length) * 100;
-            console.log(item + ": " + percentage + "%");
-          }
+        for (let j in interactionCount) {
+            let percentage = (interactionCount[j] / globalData.length) * 100;
+            console.log(j + ": " + percentage + "%");
+            dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage}</td></tr>`;
+        }
+
+        tableBodyPercentage.innerHTML = dataHtmlPercentage;
+  
+    
+
+
 
     }
 
