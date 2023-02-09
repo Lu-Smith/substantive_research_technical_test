@@ -38,6 +38,8 @@ getAPI()
         let interactionCount = {};
         const tableBodyPercentage = document.getElementById('tableDataPercentage');
         let dataHtmlPercentage = '';
+        let percentageArray = [];
+        let  sectorLabelsArray = [];
 
         for (let i = 0; i < globalData.length; i++) {
             if (interactionCount[globalData[i].sector_id]) {
@@ -51,11 +53,46 @@ getAPI()
             let percentage = (interactionCount[j] / globalData.length) * 100;
             console.log(j + ": " + percentage.toFixed(1) + "%");
             dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage.toFixed(1)}%</td></tr>`;
+            percentageArray.push(percentage.toFixed(1));
+            sectorLabelsArray.push(j);
         }
+ 
 
+        console.log(percentageArray);
+    
         
         tableBodyPercentage.innerHTML = dataHtmlPercentage;
 
+    //chart
+
+        const ctx = document.getElementById('percentage-chart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+            labels: sectorLabelsArray,
+            datasets: [{
+                label: 'interaction %',
+                data: percentageArray,
+                borderWidth: 1,
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 259, 64, 0.2)",
+                    "rgba(255, 199, 232, 0.2)",
+                    "rgba(54, 262, 135, 0.2)",
+                    "rgba(255, 6, 186, 0.2)",
+                    "rgba(75, 292, 292, 0.2)",
+                    "rgba(25, 232, 192, 0.2)",
+                ],
+                hoverOffset: 20
+            }]
+            }
+        });
+        
     }
 
 // sort by sector_id
@@ -83,38 +120,7 @@ getAPI()
     }
    
 
-    //chart
-
-    let labelsLength = 11;
-
-
-        const ctx = document.getElementById('percentage-chart');
-
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-              labels: Array.from({ length: labelsLength }, (_, i) => i + 1),
-              datasets: [{
-                label: 'interaction %',
-                data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 8, 2],
-                borderWidth: 1,
-                backgroundColor: [
-                    "rgba(255, 99, 132, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                    "rgba(255, 206, 86, 0.2)",
-                    "rgba(75, 192, 192, 0.2)",
-                    "rgba(153, 102, 255, 0.2)",
-                    "rgba(255, 259, 64, 0.2)",
-                    "rgba(255, 199, 232, 0.2)",
-                    "rgba(54, 262, 135, 0.2)",
-                    "rgba(255, 6, 186, 0.2)",
-                    "rgba(75, 292, 292, 0.2)",
-                    "rgba(25, 232, 192, 0.2)",
-                ],
-                hoverOffset: 4
-              }]
-            }
-          });
+   
 
 
    
