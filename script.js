@@ -2,6 +2,7 @@
 
 let data;
 let globalData = [];
+let percentageChart;
 
 const getAPI = async () => {
     const response = await fetch ('http://substantiveresearch.pythonanywhere.com/');
@@ -67,7 +68,7 @@ getAPI()
 
         const ctx = document.getElementById('percentage-chart');
 
-        new Chart(ctx, {
+        percentageChart = new Chart(ctx, {
             type: 'pie',
             data: {
             labels: sectorLabelsArray,
@@ -92,7 +93,7 @@ getAPI()
             }]
             }
         });
-        
+
     }
 
 // sort by sector_id
@@ -105,10 +106,9 @@ getAPI()
 
     
     function sortColumn(columnName) {
+        percentageChart.destroy();
         const dataType = typeof globalData[0][columnName];
         sortDirection = !sortDirection; 
-        
-
         switch(dataType) {
             case 'string':
                 sortStringColumn(sortDirection, columnName);
