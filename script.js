@@ -30,7 +30,7 @@ getAPI()
         let dataHtml = '';
     
         for (let interaction of globalData) {
-                dataHtml += `<tr><td>${interaction.date}</td><td>${interaction.name}</td><td>${interaction.sector_id}</td></tr>`;
+                dataHtml += `<tr><td>${interaction.sector_id}</td><td>${interaction.name}</td><td>${interaction.date}</td></tr>`;
         }
         tableBody.innerHTML = dataHtml;
 
