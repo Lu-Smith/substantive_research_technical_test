@@ -60,11 +60,34 @@ th {
 
 tr:nth-child(even) {
     background-color: $secondary-background;
+    transition: 200ms all ease-in-out;
+    
 }
 
 tr:hover {
   background-color: $secondary-color;
   color: $secondary-background;
+  border-top-left-radius: $base-border-radius;
+}
+
+.sector-id-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 200ms all ease-in-out;
+    border-top-left-radius: $base-border-radius;
+
+    span {
+        margin-left: 5px;
+    }
+}
+
+.sector-id-button:hover {
+    background-color: $primary-color;
+    color: $primary-background;
 }
 
 .canvas-percentage-container {

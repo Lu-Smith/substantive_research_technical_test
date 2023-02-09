@@ -56,11 +56,32 @@ th {
 
 tr:nth-child(even) {
   background-color: #dde0ab;
+  transition: 200ms all ease-in-out;
 }
 
 tr:hover {
   background-color: #313f36;
   color: #dde0ab;
+  border-top-left-radius: 20px;
+}
+
+.sector-id-button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 200ms all ease-in-out;
+  border-top-left-radius: 20px;
+}
+.sector-id-button span {
+  margin-left: 5px;
+}
+
+.sector-id-button:hover {
+  background-color: #4c6c81;
+  color: #feffdf;
 }
 
 .canvas-percentage-container {
