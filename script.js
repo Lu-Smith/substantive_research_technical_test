@@ -97,20 +97,31 @@ getAPI()
                 label: 'interaction %',
                 data: percentageArray,
                 backgroundColor: [
-                    "rgba(255, 99, 132, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                    "rgba(255, 206, 86, 0.2)",
-                    "rgba(75, 192, 192, 0.2)",
-                    "rgba(153, 102, 255, 0.2)",
-                    "rgba(255, 259, 64, 0.2)",
-                    "rgba(255, 199, 232, 0.2)",
-                    "rgba(54, 262, 135, 0.2)",
-                    "rgba(255, 6, 186, 0.2)",
-                    "rgba(75, 292, 292, 0.2)",
-                    "rgba(25, 232, 192, 0.2)",
+                    "#36626a",
+                    "#f4aeba",
+                    "#a2a8d3",
+                    "#eb2632",
+                    "#42b883",
+                    "#f8f398",
+                    "#ff6f3c",
+                    "#cbf078",
+                    "#8ed2c9",
+                    "#394a51",
+                    "#c7b198",
                 ],
                 hoverOffset: 20
             }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'left',
+                        labels: {
+                            color: '#313f36'
+                        }
+                    }
+                }
             }
         });
 
