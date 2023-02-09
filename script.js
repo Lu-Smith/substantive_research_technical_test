@@ -3,6 +3,7 @@
 let data;
 let globalData = [];
 let percentageChart;
+let interactionsChart;
 
 const getAPI = async () => {
     const response = await fetch ('http://substantiveresearch.pythonanywhere.com/');
@@ -15,7 +16,6 @@ const getAPI = async () => {
 
 getAPI()
 .then(data => {
-    console.log(data);
     globalData = data;
     loadTableData(globalData);
 })
@@ -29,11 +29,37 @@ getAPI()
     function loadTableData(globalData) {
         const tableBody = document.getElementById('tableData');
         let dataHtml = '';
+        let interactionsArray = [];
+        let dateArray = [];
     
         for (let interaction of globalData) {
                 dataHtml += `<tr><td>${interaction.sector_id}</td><td>${interaction.name}</td><td>${interaction.date}</td></tr>`;
+                dateArray.push(interaction.date);
+                interactionsArray.push(interaction.sector_id);
         }
         tableBody.innerHTML = dataHtml;
+        console.log(interactionsArray);
+
+//scatter-chart
+
+    const ctxS = document.getElementById('line-chart');
+
+    interactionsChart = new Chart(ctxS, {
+        type: 'line',
+        data: {
+        labels: dateArray,
+        datasets: [{
+            label: 'interactions',
+            data: interactionsArray,
+            fill: false,
+            tension: 0.1,
+            borderWidth: 0.5,
+            backgroundColor: "pink",
+            borderColor: "pink",
+            pointBackgroundColor: "blue",
+        }]
+        }
+    });
 
  //show the percentages of interactions this client has for each sector.
         let interactionCount = {};
@@ -52,30 +78,24 @@ getAPI()
           
         for (let j in interactionCount) {
             let percentage = (interactionCount[j] / globalData.length) * 100;
-            console.log(j + ": " + percentage.toFixed(1) + "%");
             dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage.toFixed(1)}%</td></tr>`;
             percentageArray.push(percentage.toFixed(1));
             sectorLabelsArray.push(j);
-        }
- 
-
-        console.log(percentageArray);
-    
+        }   
         
         tableBodyPercentage.innerHTML = dataHtmlPercentage;
 
-    //chart
+    //percentage-chart
 
-        const ctx = document.getElementById('percentage-chart');
+        const ctxP = document.getElementById('percentage-chart');
 
-        percentageChart = new Chart(ctx, {
+        percentageChart = new Chart(ctxP, {
             type: 'pie',
             data: {
             labels: sectorLabelsArray,
             datasets: [{
                 label: 'interaction %',
                 data: percentageArray,
-                borderWidth: 1,
                 backgroundColor: [
                     "rgba(255, 99, 132, 0.2)",
                     "rgba(54, 162, 235, 0.2)",
@@ -107,6 +127,7 @@ getAPI()
     
     function sortColumn(columnName) {
         percentageChart.destroy();
+        interactionsChart.destroy();
         const dataType = typeof globalData[0][columnName];
         sortDirection = !sortDirection; 
         switch(dataType) {

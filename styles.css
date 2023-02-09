@@ -39,7 +39,12 @@ tr:hover {
   color: white;
 }
 
-.canvas-container {
-  width: 500px;
+.canvas-percentage-container {
+  width: 40%;
+  margin: 50px auto;
+}
+
+.canvas-line-container {
+  width: 90%;
   margin: 50px auto;
 }/*# sourceMappingURL=styles.css.map */
