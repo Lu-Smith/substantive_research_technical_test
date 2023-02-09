@@ -30,10 +30,7 @@ getAPI()
         let dataHtml = '';
     
         for (let interaction of globalData) {
-   
                 dataHtml += `<tr><td>${interaction.date}</td><td>${interaction.name}</td><td>${interaction.sector_id}</td></tr>`;
-
-            
         }
         tableBody.innerHTML = dataHtml;
 
@@ -85,6 +82,39 @@ getAPI()
         loadTableData(globalData);
     }
    
+
+    //chart
+
+    let labelsLength = 11;
+
+
+        const ctx = document.getElementById('percentage-chart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: Array.from({ length: labelsLength }, (_, i) => i + 1),
+              datasets: [{
+                label: 'interaction %',
+                data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 8, 2],
+                borderWidth: 1,
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 259, 64, 0.2)",
+                    "rgba(255, 199, 232, 0.2)",
+                    "rgba(54, 262, 135, 0.2)",
+                    "rgba(255, 6, 186, 0.2)",
+                    "rgba(75, 292, 292, 0.2)",
+                    "rgba(25, 232, 192, 0.2)",
+                ],
+                hoverOffset: 4
+              }]
+            }
+          });
 
 
    

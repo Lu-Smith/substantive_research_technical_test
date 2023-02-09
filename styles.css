@@ -37,4 +37,9 @@ tr:nth-child(even) {
 tr:hover {
   background-color: black;
   color: white;
+}
+
+.canvas-container {
+  width: 500px;
+  margin: 50px auto;
 }/*# sourceMappingURL=styles.css.map */
