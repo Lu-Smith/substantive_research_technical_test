@@ -1,3 +1,5 @@
+@import 'colors.scss';
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +9,16 @@
 body {
     text-align: center;
     padding: 30px;
+    background-color: $primary-background;
 }
 
 h1 {
-    color: red;
+    color: $primary-color;
     margin-bottom: 30px
+}
+
+h2 {
+    color: $secondary-color;
 }
 
 table {
@@ -21,7 +28,7 @@ table {
 }
 
 td, th {
-    border: 1px solid #cccc;
+    border: 1px solid $primary-color;
     padding: 10px;
 }
 
@@ -31,12 +38,12 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: pink;
+    background-color: $secondary-background;
 }
 
 tr:hover {
-  background-color: black;
-  color: white;
+  background-color: $secondary-color;
+  color: $secondary-background;
 }
 
 .canvas-percentage-container {
@@ -47,4 +54,13 @@ tr:hover {
 .canvas-line-container {
     width: 90%;
     margin: 50px auto;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: $secondary-background;
+}
+
+footer a {
+    color: $secondary-color;
 }
