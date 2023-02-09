@@ -114,7 +114,7 @@ getAPI()
             let percentage = (interactionCount[j] / globalData.length) * 100;
             dataHtmlPercentage += `<tr><td>${j}</td><td>${percentage.toFixed(1)}%</td></tr>`;
             percentageArray.push(percentage.toFixed(1));
-            sectorLabelsArray.push(j);
+            sectorLabelsArray.push('Sector ' + j);
         }   
         
         tableBodyPercentage.innerHTML = dataHtmlPercentage;
@@ -152,8 +152,9 @@ getAPI()
                         display: true,
                         position: 'left',
                         labels: {
-                            color: '#313f36'
-                        }
+                            color: '#313f36',
+                        },
+                        
                     }
                 }
             }
