@@ -40,7 +40,7 @@ getAPI()
         tableBody.innerHTML = dataHtml;
         console.log(interactionsArray);
 
-//scatter-chart
+//line-chart
 
     const ctxS = document.getElementById('line-chart');
 
@@ -54,10 +54,36 @@ getAPI()
             fill: false,
             tension: 0.1,
             borderWidth: 0.5,
-            backgroundColor: "pink",
-            borderColor: "pink",
-            pointBackgroundColor: "blue",
+            backgroundColor: "#ff6f3c",
+            borderColor: "#ff6f3c",
+            pointBackgroundColor: "#ff6f3c",
         }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#ff6f3c'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        // Include a dollar sign in the ticks
+                        callback: function(value, index, ticks) {
+                            return 'Sector ' + value;
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        lineWidth: 4
+                    }
+                },
+            }
         }
     });
 
